@@ -1,6 +1,6 @@
 {
-  "name": "async-busboy",
-  "version": "1.0.1",
+  "name": "@recuperateur/async-busboy",
+  "version": "1.2.0",
   "description": "Promise based multipart form parser",
   "main": "index.js",
   "repository": {
@@ -22,7 +22,7 @@
   "author": "Emanuel Chappat <emmanuel.chappat@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "busboy": "^1.5.0"
+    "busboy": "^1.6.0"
   },
   "devDependencies": {
     "expect": "^27.5.1",

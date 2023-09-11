@@ -1,0 +1,60 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        # Support only LTS and Current build of node
+        # See https://github.com/nodejs/Release
+        node-version: [ 12.x, 14.x, 16.x, 18.x, 20.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [ 'lint' ]
+    strategy:
+      matrix:
+        node-version: [ 12.x, 14.x, 16.x, 18.x, 20.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test
+
+  cover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [ 'lint' ]
+    strategy:
+      matrix:
+        node-version: [ 12.x, 14.x, 16.x, 18.x, 20.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run cover
