@@ -2,17 +2,16 @@
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
-[![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-[npm-image]: https://img.shields.io/npm/v/async-busboy.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/async-busboy
-[travis-image]: https://img.shields.io/travis/m4nuC/async-busboy.svg?style=flat-square
-[travis-url]: https://travis-ci.org/m4nuC/async-busboy
-[codecov-image]: https://codecov.io/github/m4nuC/async-busboy/coverage.svg?branch=master
-[codecov-url]: https://codecov.io/github/m4nuC/async-busboy?branch=master
-[download-image]: https://img.shields.io/npm/dm/async-busboy.svg?style=flat-square
-[download-url]: https://npmjs.org/package/async-busboy
+[npm-image]: https://img.shields.io/npm/v/%40recuperateur/async-busboy
+[npm-url]: https://www.npmjs.com/package/@recuperateur/async-busboy
+[travis-image]: https://github.com/Recuperateur/async-busboy/actions/workflows/test.yml/badge.svg
+[travis-url]: https://github.com/Recuperateur/async-busboy/actions/workflows/test.yml
+[download-image]: https://img.shields.io/npm/dm/%40recuperateur/async-busboy
+[download-url]: https://www.npmjs.com/package/@recuperateur/async-busboy
+
+Note: This library is a fork of a fork of [async-busboy](https://github.com/m4nuC/async-busboy).
 
 The typical use case for this library is when handling forms that contain file upload field(s) mixed with other inputs.
 Parsing logic relies on [busboy](http://github.com/mscdex/busboy).
