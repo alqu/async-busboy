@@ -217,6 +217,7 @@ function request() {
       '-----------------------------paZqsnEHRufoShdX6fh0lUhXBP4k--',
     ].join('\r\n')
   );
+  stream.end();
 
   return stream;
 }
